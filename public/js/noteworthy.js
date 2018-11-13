@@ -10,6 +10,13 @@ function Note(note){
     function viewIndividualNote(index){
       return "Hello"
     }
+    
+     function list_abbreviated_notes() {
+      return list.map(y => {
+      return y.substring(0,20)
+      } )
+    }
+    note.list_abbreviated_notes = list_abbreviated_notes
     note.viewIndividualNote = viewIndividualNote
 
     note.create_new_note = create_new_note;
