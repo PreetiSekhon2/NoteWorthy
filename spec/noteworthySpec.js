@@ -1,13 +1,5 @@
-var calculator = new Calc
+var note_1 = new Note
 
-new Test('this is a passing test', 1, 'toEqual', 1)
+var test_1 = new Test('returns an abbreviated list of notes should say "This is a test of an"', note_1.list_abbreviated_notes()[0],'toEqual', 'This is a test of an')
 
-new Test('this is a failing test', 1, 'toEqual', 2)
-
-new Test('this is a test for the calculator', calculator.add(1,3), 'toEqual', 4)
-
-new Test('this is a failing test for the calculator', calculator.add(1,3), 'toEqual', 5)
-
-new Test('this is a test with a test type', calculator.add(1,4), 'toEqual', 5)
-
-new Test('4 plus 5 is equal to 9', calculator.add(4,5), 'notEqualTo', 8)
+var test_2 = new Test('length sould be 20', note_1.list_abbreviated_notes()[0].length,'toEqual', 20)
