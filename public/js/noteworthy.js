@@ -1,13 +1,24 @@
-function Note() {
+"use strict";
+function Note(note){
+  this.list = [];
 
-
-  (function(x) {
-    var list = ['This is a test of an amazingly longggggggg note']
-    function list_abbreviated_notes() {
+  (function(note) {
+    function create_new_note(string) {
+      this.list.push(string);
+    };
+    
+    function viewIndividualNote(index){
+      return "Hello"
+    }
+    
+     function list_abbreviated_notes() {
       return list.map(y => {
       return y.substring(0,20)
       } )
     }
-  x.list_abbreviated_notes = list_abbreviated_notes
-  })(this)
+    note.list_abbreviated_notes = list_abbreviated_notes
+    note.viewIndividualNote = viewIndividualNote
+
+    note.create_new_note = create_new_note;
+  })(this);
 }
