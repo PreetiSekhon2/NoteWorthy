@@ -6,13 +6,13 @@ function Note(note){
     function create_new_note(string) {
       this.list.push(string);
     };
-    
+
     function viewIndividualNote(index){
       return "Hello"
     }
-    
+
      function list_abbreviated_notes() {
-      return list.map(y => {
+      return this.list.map(y => {
       return y.substring(0,20)
       } )
     }
