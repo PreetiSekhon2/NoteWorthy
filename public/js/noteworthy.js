@@ -1,7 +1,3 @@
-
-// Note.prototype.create_new_note = function (note) {
-//   this.list.push(note);
-// };
 "use strict";
 function Note(note){
   this.list = [];
@@ -15,17 +11,3 @@ function Note(note){
   })(this);
 
 }
-
-
-
-
-
-// "use strict";
-//
-// (function(exports) {
-//   function exclaim(string) {
-//     return string + "!";
-//   };
-//
-//   exports.exclaim = exclaim;
-// })(this);
