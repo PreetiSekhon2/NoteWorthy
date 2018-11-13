@@ -8,7 +8,7 @@ function Note(note){
     };
 
     function viewIndividualNote(index){
-      return "Hello"
+      return this.list[index]
     }
 
      function list_abbreviated_notes() {
