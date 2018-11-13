@@ -57,23 +57,30 @@ var Test = function(description, testingFunction, testType, equalTo) {
 
 Test.prototype.comparitor = function(type){
   switch(type) {
+
     case 'toEqual':
       this.toEqual();
       break;
+
     case 'notEqualTo':
       this.notEqualTo();
       break;
+
     case 'include':
       //code
       break;
+
     case 'notInclude':
       //code
       break;
+
+    default: 
+      console.log("No such comparator")
   }
 }
 
 Test.prototype.toEqual = function toEqual() {
-  this.output = this.testingFunction === this.equalTo;
+  this.output = (this.testingFunction === this.equalTo);
 }
 
 Test.prototype.notEqualTo = function notEqualTo() {
