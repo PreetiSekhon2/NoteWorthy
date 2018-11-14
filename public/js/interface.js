@@ -41,7 +41,7 @@ function createListElements(){
     var first_li = document.createElement('li')
 
     link.href="javascript:showNote(" + i + ");";
-    link.textContent = ab[i];
+    link.textContent = ab[i] + "...";
 
     first_li.appendChild(link)
     document.getElementById('note_list').appendChild(first_li)
