@@ -26,12 +26,27 @@ function showList(){
   createListElements();
 }
 
+
+
+
 function createListElements(){
   var ab = note.list_abbreviated_notes()
   for (i = 0; i < ab.length; i++) {
+
+    var link = document.createElement('a')
     var first_li = document.createElement('li')
-    var first_text = document.createTextNode(ab[i])
-    first_li.appendChild(first_text)
+
+    link.href="javascript:showNote(" + i + ");";
+    link.textContent = ab[i];
+
+    first_li.appendChild(link)
     document.getElementById('note_list').appendChild(first_li)
   }
+}
+
+
+function showNote(i){ 
+  document.getElementById('create_list').style.display="none";
+  document.getElementById('page_2').style.display="block";
+  document.getElementById('note_text').innerHTML = note.viewIndividualNote(i)
 }
