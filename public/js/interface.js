@@ -4,17 +4,22 @@
 // Note.list_abbreviated_notes()
 
 var note = new Note
+var textBox = (document.getElementById('text_box'))
+
 document.getElementById('submit_note').addEventListener("click", function () {
-  var textBox = (document.getElementById('text_box').value)
-  if (textBox != "") {
-    note.create_new_note(textBox);
-    document.getElementById('text_box').value = '';
-  showList();
+  if (textBox.value != "") {
+    addNote();
+    showList();
+  }
+});
+
+function addNote(){
+  note.create_new_note(textBox.value);
+  textBox.value = '';
 }
 
 function showList(){
   var note_list = document.getElementById('note_list')
-  var i;
   while (note_list.hasChildNodes()) {
       note_list.removeChild(note_list.firstChild);
   }
@@ -30,8 +35,3 @@ function createListElements(){
     document.getElementById('note_list').appendChild(first_li)
   }
 }
-
-
-// document.getElementById('note_list').value = '<li>' + ab[0] + '</li>';
-// console.log(ab[0])
-});
