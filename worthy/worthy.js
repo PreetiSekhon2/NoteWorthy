@@ -14,12 +14,21 @@
       actualValue = actual;
 
       return {
-        toEqual: toEqual
+        toEqual: toEqual,
+        toNotEqual: toNotEqual
       }
     }
 
     function toEqual(expectedValue) {
       if (expectedValue == actualValue) {
+        document.write((testDescription + '<br><br>').fontcolor("green"))
+      } else {
+        document.write((testDescription + '<br>FAILED - Expected ' + expectedValue + ' but got ' + actualValue + '<br><br>').fontcolor("red"))
+      }
+    }
+
+    function toNotEqual(expectedValue) {
+      if (expectedValue != actualValue) {
         document.write((testDescription + '<br><br>').fontcolor("green"))
       } else {
         document.write((testDescription + '<br>FAILED - Expected ' + expectedValue + ' but got ' + actualValue + '<br><br>').fontcolor("red"))
