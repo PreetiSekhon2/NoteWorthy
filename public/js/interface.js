@@ -26,9 +26,6 @@ function showList(){
   createListElements();
 }
 
-
-
-
 function createListElements(){
   var ab = note.list_abbreviated_notes()
   for (i = 0; i < ab.length; i++) {
@@ -45,8 +42,14 @@ function createListElements(){
 }
 
 
-function showNote(i){ 
+function showNote(i){
   document.getElementById('create_list').style.display="none";
   document.getElementById('page_2').style.display="block";
   document.getElementById('note_text').innerHTML = note.viewIndividualNote(i)
 }
+
+document.getElementById('back').addEventListener("click", function(){
+  document.getElementById('note_text').innerHTML = "";
+  document.getElementById('page_2').style.display="none";
+  document.getElementById('create_list').style.display="block";
+});
