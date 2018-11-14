@@ -39,6 +39,22 @@ expect(note.viewIndividualNote(0)).toEqual(exampleNote)
 In spec/noteworthySpec.js:
 
 ```JavaScript
+it(description).expect(testingFunction).toEqual(expectedValue)
+```
+
+* 'description' - a string describing the test.
+* 'testingFunction' - the function you are testing (e.g. calculator.add(1,3) ).
+* 'expectedValue' - the result your are expecting.
+
+_Example_
+```JavaScript
+it('calculator adds two numbers together').expect(calculator.add(1,3)).toEqual(4)
+```
+
+#### How to Write a Test (Old Framework) ####
+In spec/noteworthySpec.js:
+
+```JavaScript
 new Test(description, testingFunction, testType, equalTo)
 ```
 
