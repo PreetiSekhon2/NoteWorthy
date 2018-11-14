@@ -1,10 +1,8 @@
-// hide on load "page_2"
-// Note.create_new_note(string)
-// Note.viewIndividualNote(index)
-// Note.list_abbreviated_notes()
-
+// *************** Variables ******************
 var note = new Note
 var textBox = (document.getElementById('text_box'))
+
+// **************** Events **********************
 
 document.getElementById('submit_note').addEventListener("click", function () {
   if (textBox.value != "") {
@@ -12,6 +10,15 @@ document.getElementById('submit_note').addEventListener("click", function () {
     showList();
   }
 });
+
+document.getElementById('back').addEventListener("click", function(){
+  document.getElementById('note_text').innerHTML = "";
+  document.getElementById('page_2').style.display="none";
+  document.getElementById('create_list').style.display="block";
+});
+
+
+// ***************** Functions ************************
 
 function addNote(){
   note.create_new_note(textBox.value);
@@ -41,15 +48,8 @@ function createListElements(){
   }
 }
 
-
 function showNote(i){
   document.getElementById('create_list').style.display="none";
   document.getElementById('page_2').style.display="block";
   document.getElementById('note_text').innerHTML = note.viewIndividualNote(i)
 }
-
-document.getElementById('back').addEventListener("click", function(){
-  document.getElementById('note_text').innerHTML = "";
-  document.getElementById('page_2').style.display="none";
-  document.getElementById('create_list').style.display="block";
-});
