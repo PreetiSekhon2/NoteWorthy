@@ -35,7 +35,50 @@
       }
     }
 
+    // function doubleObj(methodName, mockResult) {
+    //   // (function()) {
+    //   //   obj[methodName] = function() {
+    //   //     return mockResult
+    //   //   }
+    //   // })();
+    //   // obj = {}
+    //   // obj[methodName] = function() {
+    //   //   return mockResult
+    //   // (setmethod())();
+    //   // }
+    //   // console.log(this[methodName])
+    //   // this.mockResult = mockResult;
+    //
+    //   function setMethod() {
+    //     this[methodName] = function() {
+    //       return mockResult
+    //     }
+    //   }
+    //
+    //   // (function() {
+    //   //   setMethod();
+    //   // })();
+    //
+    //   return {
+    //     methodName: methodName,
+    //     setMethod: setMethod
+    //   }
+    // }
+
+    DoubleObj = function(methodName, mockResult) {
+      this.methodName = methodName;
+      this.mockResult = mockResult;
+      this.setMethod();
+    }
+
+    DoubleObj.prototype.setMethod = function (){
+      this[this.methodName] = function(){
+        return this.mockResult
+      }
+    }
+
     exports.it = it
+    // exports.doubleObj = doubleObj
 })(this)
 
 // ********** Old testing framework **********
