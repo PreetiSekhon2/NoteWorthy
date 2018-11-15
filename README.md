@@ -51,6 +51,22 @@ _Example_
 it('calculator adds two numbers together').expect(calculator.add(1,3)).toEqual(4)
 ```
 
+##### How to Create a Double #####
+```JavaScript
+var mock = new DoubleObj('mockMethod', returnValue)
+```
+
+* 'mockMethod' - the name of the function to be mocked.
+* 'returnValue' - what to return when calling the method.
+
+**Note:** _Additional methods currently have to be created in a new DoubleObj._
+
+_Example_
+```JavaScript
+var mock = new DoubleObj('mockMethod', 4)
+it('returns a mocked method').expect(mock.mockMethod()).toEqual(4)
+```
+
 #### How to Write a Test (Old Framework) ####
 In spec/noteworthySpec.js:
 
