@@ -9,7 +9,7 @@ note.add('dsfsdfdsf')
 expect(note.list.length).toqual(1)
 expect(note.list[0]).toequal('dsfsdfdsf')
 
-************ Abreviated List Method *****************
+************ Abbreviated List Method *****************
 it('returns an abbreviated list of notes', function{
   note.add('dsfsdfdsfdudhsadjkashdksajdhjashdkjashdkasjdhaksjhdkajsdhkjashdkjashdkj')
   expect(note.abbrev_list()[0]).toequal('abc... x20')
